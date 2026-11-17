@@ -255,6 +255,11 @@ export default function Auth({ onLoginSuccess, onAdminLoginSuccess, darkMode }: 
         }),
       });
 
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('Static host environment detected');
+      }
+
       const data = await response.json();
       setLoading(false);
 

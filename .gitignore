@@ -2,7 +2,11 @@ node_modules/
 build/
 dist/
 coverage/
+.vite/
+server.js
+*.tsbuildinfo
 .DS_Store
+Thumbs.db
 *.log
 .env*
 !.env.example
